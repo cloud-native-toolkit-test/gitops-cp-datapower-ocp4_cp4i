@@ -1,0 +1,30 @@
+"datapower_instance":
+  "name": "dp"
+  "namespace": "gitops-cp-datapower"
+  "passwordSecret":
+    "name": "dp-credentials"
+  "spec":
+    "domains":
+    - "dpApp":
+        "config":
+        - "dp-webui-config"
+      "name": "default"
+    "license":
+      "accept": true
+      "license": "L-RJON-CCAT5F"
+      "use": "nonproduction"
+    "replicas": 1
+    "resources":
+      "limits":
+        "memory": "4Gi"
+      "requests":
+        "cpu": "1"
+        "memory": "4Gi"
+    "users":
+    - "accessLevel": "privileged"
+      "name": "admin"
+      "passwordSecret": "dp-credentials"
+    "version": "10.5.0.0"
+  "webUIconfigMap":
+    "name": "dp-webui-config"
+
